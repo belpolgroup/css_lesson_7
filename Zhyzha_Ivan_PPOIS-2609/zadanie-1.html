@@ -1,69 +1,119 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Использование веб-форм на сайте</title>
-  <link rel="stylesheet" href="css/style1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Использование веб-форм на сайте</title>
+    <link rel="stylesheet" href="css/style1.css">
 </head>
 <body>
-  <header>
-    <h1>Форма регистрации на сайте</h1>
-    <!--
-     <nav>
-       <a href="#" title="На главную">На главную</a>
-     </nav>
-    -->
-  </header>
-  <main>
-    <article class="c1">
-      <h2>Добро пожаловать на наш сайт!</h2>
-       <form action="/signup" method="POST">
-        <fieldset class="account-info">
-          <label>Имя</label>
-          <input type="text" name="first_name">
-          <label>Фамилия</label>
-          <input type="text" name="last_name">
-          <label>Email</label>
-          <input type="text" required="required" class="email notnull">
-          <label>Телефон</label>
-          <input type="text" name="phone" required="required" class="notnull"
-            placeholder="+375 (код оператора) 111-11-11">
-          <label>Страна</label>
-            <select name="country">
-              <option>Беларусь</option>
-              <option>Россия</option>
-              <option>Украина</option>
-              <option>Польша</option>
-              <option>Литва</option>
-              <option>Латвия</option>
-              <option>Эстония</option>
-              <option>США</option>
-            </select>
-          <label>Пароль</label>
-          <input type="password" name="password">
-          <label>Подтвердите пароль</label>
-          <input type="password" name="password_confirm">
-          
-        </fieldset>
-        <fieldset class="account-action">
-          <label><input type="checkbox" name="ww_submit_confirm">&nbsp;Отметьте для подтверждения согласия <a
-              href="/подключение/правила-использования-услуги" target="_blank" rel="noopener">с правилами использования
-              услуги</a></label>
-              <label><input type="checkbox" name="ww_submit_confirm">&nbsp;Отметьте для согласия на обработку персональных данных в
-                соответствии с <a href="/соглашение-об-обработке-персональных-данных" target="_blank" rel="noopener">Соглашением об
-                  обработке персональных данных</a></label>
-          <input class="btn" type="submit" name="submit" value="Зарегистрироваться">
-          </fieldset>
-      </form>
-    </article>
-    <!--<aside>
-      Тут могла быть ваша реклама
-    </aside>-->
-  </main>
-  <footer class="foot">
-  &#169; 2026, Официальный сайт Иванова Ивана Ивановича
-  </footer>
+    <header class="page-header">
+        <h1>Форма регистрации на сайте</h1>
+    </header>
+
+    <main class="page">
+        <h2>Добро пожаловать на наш сайт!</h2>
+        <p class="intro">Для регистрации введите свои данные:</p>
+
+        <form action="/signup" method="post">
+            <fieldset class="account-info">
+                <legend>Регистрационные данные</legend>
+
+                <div class="form-fields">
+                    <div class="form-field">
+                        <label for="first-name">Имя</label>
+                        <input id="first-name" name="first_name"
+                               type="text" placeholder="Иван" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="last-name">Фамилия</label>
+                        <input id="last-name" name="last_name"
+                               type="text" placeholder="Иванов" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email"
+                               type="email" placeholder="example@mail.by"
+                               pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="phone">Телефон</label>
+                        <input id="phone" name="phone"
+                               type="tel"
+                               placeholder="+375(29)111-11-11"
+                               pattern="\+375\([0-9]{2}\)[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                               required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="country">Страна</label>
+                        <select id="country" name="country" required>
+                            <option value="by">Беларусь</option>
+                            <option value="ru">Россия</option>
+                            <option value="ua">Украина</option>
+                            <option value="pl">Польша</option>
+                            <option value="lt">Литва</option>
+                            <option value="lv">Латвия</option>
+                            <option value="ee">Эстония</option>
+                            <option value="us">США</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="password">Пароль</label>
+                        <input id="password" name="password"
+                               type="password" minlength="8"
+                               placeholder="Мин. 8 символов"
+                               autocomplete="new-password" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="password-confirm">Подтвердите пароль</label>
+                        <input id="password-confirm" name="password_confirm"
+                               type="password" minlength="8"
+                               placeholder="Повторите пароль"
+                               autocomplete="new-password" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="account-action">
+                <div class="consent">
+                    <input id="consent-rules" name="consent_rules"
+                           type="checkbox" required>
+                    <label for="consent-rules">
+                        Отметьте для подтверждения согласия
+                        <a href="/подключение/правила-использования-услуги">
+                            с правилами использования услуги
+                        </a>
+                    </label>
+                </div>
+
+                <div class="consent">
+                    <input id="consent-data" name="consent_data"
+                           type="checkbox" required>
+                    <label for="consent-data">
+                        Отметьте для согласия на обработку персональных данных
+                        в соответствии с
+                        <a href="/соглашение-об-обработке-персональных-данных">
+                            Соглашением об обработке персональных данных
+                        </a>
+                    </label>
+                </div>
+
+                <button class="btn" type="submit">
+                    Зарегистрироваться
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="foot">
+        © 2026, Официальный сайт Иванова Ивана Ивановича
+    </footer>
 </body>
 </html>
