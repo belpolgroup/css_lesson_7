@@ -25,7 +25,7 @@ body {
 .page-header h1 {
     margin-top: 26px;
     margin-bottom: 30px;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -34,11 +34,13 @@ body {
     margin-top: 0;
     margin-bottom: 26px;
     font-size: 19px;
+    text-align: center;
 }
 
 .intro {
     margin-bottom: 14px;
-    font-size: 15px;
+    font-size: 17px;
+    text-align: center;
 }
 
 .account-info {
@@ -204,6 +206,18 @@ body {
     .foot {
         max-width: 350px;
     }
+
+    .page-header h1 {
+        font-size: 17px;
+    }
+
+    .page h2 {
+        font-size: 18px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 479px) {
@@ -218,7 +232,7 @@ body {
     .page-header h1 {
         margin-top: 24px;
         margin-bottom: 28px;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .account-info {
@@ -233,5 +247,13 @@ body {
 
     .form-fields {
         row-gap: 12px;
+    }
+
+    .page h2 {
+        font-size: 17px;
+    }
+
+    .intro {
+        font-size: 15px;
     }
 }
